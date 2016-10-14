@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBlueButton= (Button) findViewById(R.id.blueButton);
         mMagentaButton= (Button) findViewById(R.id.magentaButton);
         mGrayButton= (Button) findViewById(R.id.grayButton);
-        
+
         mBlueButton.setOnClickListener(this);
         mMagentaButton.setOnClickListener(this);
         mGrayButton.setOnClickListener(this);
@@ -36,14 +36,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.blueButton:
                 mColorText.setText("Blue");
                 mColorText.setTextColor(Color.BLUE);
+                mColorText.setBackgroundColor(Color.YELLOW);
                 break;
             case R.id.magentaButton:
                 mColorText.setText("Magenta");
                 mColorText.setTextColor(Color.MAGENTA);
+                mColorText.setBackgroundColor(Color.LTGRAY);
                 break;
             case R.id.grayButton:
                 mColorText.setText("Gray");
                 mColorText.setTextColor(Color.GRAY);
+                mColorText.setBackgroundColor(Color.YELLOW);
                 break;
         }
     }
