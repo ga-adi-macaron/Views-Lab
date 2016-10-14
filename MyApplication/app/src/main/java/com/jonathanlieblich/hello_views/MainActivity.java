@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity {
     private Button mBlueButton;
     private Button mMagentaButton;
     private Button mGrayButton;
@@ -25,29 +25,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGrayButton = (Button) findViewById(R.id.gray);
         mMagentaButton = (Button) findViewById(R.id.magenta);
 
-        mBlueButton.setOnClickListener(this);
-        mGrayButton.setOnClickListener(this);
-        mMagentaButton.setOnClickListener(this);
+        mBlueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTextView.setText("blue");
+                mTextView.setTextColor(Color.BLUE);
+                mTextView.setBackgroundColor(Color.BLACK);
+            }
+        });
+        mGrayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTextView.setText("gray");
+                mTextView.setTextColor(Color.GRAY);
+                mTextView.setBackgroundColor(Color.WHITE);
+            }
+        });
+        mMagentaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTextView.setText("magenta");
+                mTextView.setTextColor(Color.MAGENTA);
+                mTextView.setBackgroundColor(Color.LTGRAY);
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.blue:
-                mTextView.setTextColor(Color.BLUE);
-                mTextView.setText("blue");
-                mTextView.setBackgroundColor(Color.BLACK);
-                break;
-            case R.id.gray:
-                mTextView.setTextColor(Color.GRAY);
-                mTextView.setText("gray");
-                mTextView.setBackgroundColor(Color.GREEN);
-                break;
-            case R.id.magenta:
-                mTextView.setTextColor(Color.MAGENTA);
-                mTextView.setText("magenta");
-                mTextView.setBackgroundColor(Color.LTGRAY);
-                break;
-        }
-    }
+//    @Override
+//    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.blue:
+//                mTextView.setTextColor(Color.BLUE);
+//                mTextView.setText("blue");
+//                mTextView.setBackgroundColor(Color.BLACK);
+//                break;
+//            case R.id.gray:
+//                mTextView.setTextColor(Color.GRAY);
+//                mTextView.setText("gray");
+//                mTextView.setBackgroundColor(Color.GREEN);
+//                break;
+//            case R.id.magenta:
+//                mTextView.setTextColor(Color.MAGENTA);
+//                mTextView.setText("magenta");
+//                mTextView.setBackgroundColor(Color.LTGRAY);
+//                break;
+//        }
+//    }
 }
